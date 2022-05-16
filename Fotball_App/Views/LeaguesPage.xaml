@@ -1,0 +1,108 @@
+﻿<Page
+    x:Class="Fotball_App.Views.LeaguesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:models="using:Fotball_App.Core.Models"
+    xmlns:views="using:Fotball_App.Views"
+    mc:Ignorable="d"
+    xmlns:behaviors="using:Fotball_App.Behaviors"
+    behaviors:NavigationViewHeaderBehavior.HeaderMode="Never"
+    Style="{StaticResource PageStyle}">
+
+    <Page.Resources>
+
+        <DataTemplate x:Key="ItemTemplate" x:DataType="viewmodels:LeagueEditViewModel">
+            <Grid Height="60">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel
+                    Grid.Column="1"
+                    Margin="{StaticResource SmallLeftMargin}"
+                    VerticalAlignment="Center">
+                    <TextBlock Text="{x:Bind LeagueName}" Style="{StaticResource ListTitleStyle}" />
+                    <TextBlock Text="{x:Bind Country}" Style="{StaticResource ListSubTitleStyle}" />
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="DetailsTemplate">
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <views:LeaguesDetailControl ListDetailsMenuItem="{Binding}" />
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="NoSelectionContentTemplate">
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <TextBlock
+                    x:Uid="Leagues_NoSelection"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    TextAlignment="Center"
+                    Style="{ThemeResource SubtitleTextBlockStyle}" />
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ListHeaderTemplate">
+            <Grid Height="40">
+                <TextBlock
+                    VerticalAlignment="Center"
+                    Style="{StaticResource ListTitleStyle}"
+                    Text="{Binding}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="MinimalListHeaderTemplate">
+            <Grid Height="40">
+                <TextBlock
+                    Margin="96,0,0,0"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource ListTitleStyle}"
+                    Text="{Binding}" />
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid x:Name="ContentArea">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!--641 is the default CompactModeThresholdWidth in NavigationView -->
+                        <AdaptiveTrigger MinWindowWidth="641" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ListDetailsViewControl.ListHeaderTemplate" Value="{StaticResource ListHeaderTemplate}" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <controls:ListDetailsView
+            x:Uid="Leagues"
+            x:Name="ListDetailsViewControl"
+            BackButtonBehavior="Automatic"
+            BorderBrush="Transparent"
+            DetailsTemplate="{StaticResource DetailsTemplate}"
+            ItemsSource="{x:Bind ViewModel.Leagues}"
+            ItemTemplate="{StaticResource ItemTemplate}"
+            NoSelectionContentTemplate="{StaticResource NoSelectionContentTemplate}"
+            SelectedItem="{x:Bind ViewModel.Selected, Mode=TwoWay}"
+            ViewStateChanged="OnViewStateChanged"
+            ListHeaderTemplate="{StaticResource MinimalListHeaderTemplate}"
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}" >
+
+            <controls:ListDetailsView.ListCommandBar>
+                <CommandBar>
+                    <AppBarButton Icon="Add" Label="Add" Command="{x:Bind ViewModel.AddCommand}"/>
+                    <AppBarButton Icon="Edit" Label="Edit" Command="{x:Bind ViewModel.UpdateCommand}" CommandParameter="{x:Bind ViewModel.Selected, Mode=OneWay}"/>
+                    <AppBarButton Icon="Delete" Label="Delete" Command="{x:Bind ViewModel.DeleteCommand}" CommandParameter="{x:Bind ViewModel.Selected, Mode=OneWay}" />
+                    <AppBarButton Icon="Setting" Label="Settings" Command="{x:Bind ViewModel.SettingsCommand}" />
+                </CommandBar>
+            </controls:ListDetailsView.ListCommandBar>
+        </controls:ListDetailsView>
+    </Grid>
+
+</Page>

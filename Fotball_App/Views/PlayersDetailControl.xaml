@@ -16,32 +16,52 @@
             <StackPanel Orientation="Horizontal">
                 <Border CornerRadius="25">
                     <Image  Width="180" Height="250" Source="{x:Bind ListDetailsMenuItem.ProfileImageFullPath, Mode=OneWay}"/>
-                    </Border>
+                </Border>
                 <StackPanel  Margin="{StaticResource LargeLeftMargin}" Orientation="Vertical">
                     <TextBlock
-                    
                     Text="{x:Bind ListDetailsMenuItem.PlayerName, Mode=OneWay}"
+                    Style="{StaticResource TitleBodyStyles}" />
+
+                    <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Text="{x:Bind ListDetailsMenuItem.Position, Mode=OneWay}"
                     Style="{StaticResource TitleBodyStyles}" />
 
                     <TextBlock
                     Margin="{StaticResource SmallTopMargin}"
                     Text="{x:Bind ListDetailsMenuItem.National, Mode=OneWay}"
                     Style="{StaticResource TitleBodyStyles}" />
+
+
+                    <StackPanel Margin="{StaticResource SmallTopMargin}" Orientation="Horizontal" Padding="0,15,0,0">
+
+                        <StackPanel Orientation="Vertical" >
+                            <TextBlock Text="Age" Style="{StaticResource DetailSubTitleStyle}" />
+                            <TextBlock Text="{x:Bind ListDetailsMenuItem.Age, Mode=OneWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+                        </StackPanel>
+
+                        <StackPanel Margin="{StaticResource LargeLeftMargin}" Orientation="Vertical" >
+                            <TextBlock Text="Height" Style="{StaticResource DetailSubTitleStyle}" />
+                            <TextBlock Text="{x:Bind ListDetailsMenuItem.Height, Mode=OneWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+                        </StackPanel>
+                        
+                    </StackPanel>
+
+                    <StackPanel Margin="{StaticResource SmallTopMargin}" Orientation="Vertical" >
+
+                        <TextBlock Text="Club" Style="{StaticResource DetailSubTitleStyle}" />
+                        <TextBlock Text="{x:Bind ListDetailsMenuItem.Club, Mode=OneWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+                    </StackPanel>
+
+
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Name="block" Padding="0,15,0,0">
-
-                <StackPanel Orientation="Vertical" >
-                    <TextBlock Text="Age" Style="{StaticResource DetailSubTitleStyle}" />
-                    <TextBlock Text="{x:Bind ListDetailsMenuItem.Age, Mode=OneWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
-                </StackPanel>
-
-                <TextBlock
-                    Margin="{StaticResource LargeLeftMargin}"
-                    Text="Club"
-                    Style="{StaticResource DetailSubTitleStyle}" />
-                <TextBlock Text="{x:Bind ListDetailsMenuItem.Club, Mode=OneWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+            
+            <StackPanel Margin="{StaticResource LargeTopMargin}" Orientation="Vertical" >
+                <TextBlock Text="About" Style="{StaticResource DetailSubTitleStyle}" />
+                <TextBlock Text="{x:Bind ListDetailsMenuItem.About, Mode=OneWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
             </StackPanel>
+            
         </StackPanel>
     </ScrollViewer>
 </UserControl>

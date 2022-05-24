@@ -27,7 +27,10 @@ namespace Fotball_App.ViewModels
         {
             PlayerId = p.PlayerID,
             PlayerName = p.PlayerName,
+            Position = p.Position,
             Age = p.Age,
+            Height = p.Height,
+            About = p.About,
             club = p.Club,
             ProfileImage = p.ProfileImage,
             National = p.National
@@ -48,22 +51,34 @@ namespace Fotball_App.ViewModels
             set => SetProperty(_playerDto.PlayerId, value, _playerDto, (_playerDto, id) => _playerDto.PlayerId = value);
         }
 
-
         public string PlayerName
         {
             get => _playerDto.PlayerName;
             set => SetProperty(_playerDto.PlayerName, value, (name) => _playerDto.PlayerName = name);
-
-            
         }
 
+        public string Position
+        {
+            get => _playerDto.Position;
+            set => SetProperty(_playerDto.Position, value, (position) => _playerDto.Position = position);
+        }
+
+        public string About
+        {
+            get => _playerDto.About;
+            set => SetProperty(_playerDto.About, value, (about) => _playerDto.About = about);
+        }
 
         public int Age
         {
             get => _playerDto.Age;
             set => SetProperty(_playerDto.Age, value, (age) => _playerDto.Age = age);
+        }
 
-
+        public int Height
+        {
+            get => _playerDto.Height;
+            set => SetProperty(_playerDto.Height, value, (height) => _playerDto.Height = height);
         }
 
 
@@ -84,7 +99,7 @@ namespace Fotball_App.ViewModels
             get => _playerDto.National;
 
             set => SetProperty(_playerDto.National, value, (nation) => _playerDto.National = nation);
-            
+
         }
     }
 }

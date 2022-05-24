@@ -20,6 +20,7 @@ namespace Fotball_App.Services
             Configure<TeamsViewModel, TeamsPage>();
             Configure<PlayersViewModel, PlayersPage>();
             Configure<SettingsViewModel, SettingsPage>();
+
         }
 
         public Type GetPageType(string key)

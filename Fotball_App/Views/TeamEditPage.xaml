@@ -11,18 +11,23 @@
     <StackPanel>
         <StackPanel Orientation="Horizontal" Padding="0,15,0,0">
             <Image Source="{x:Bind TeamEditViewModel.ProfileImageFullPath, Mode=OneWay}" />
-            <StackPanel Orientation="Vertical" Padding="15,0,0,0">
+            <StackPanel Orientation="Vertical" Padding="20,0,0,0">
                 <TextBlock Text="Name" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
-                <TextBox VerticalAlignment="Center" PlaceholderText="Enter Teams Name" Text="{x:Bind TeamEditViewModel.TeamName, Mode=TwoWay}" Style="{ThemeResource TitleTextBlockStyle}" />
+                <TextBox VerticalAlignment="Center" PlaceholderText="Teams Name" Text="{x:Bind TeamEditViewModel.TeamName, Mode=TwoWay}" Style="{ThemeResource TitleTextBlockStyle}" />
 
-                <TextBlock Text="Description" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
-                <TextBox Width="300" TextWrapping="Wrap" PlaceholderText="Enter team description" Text="{x:Bind TeamEditViewModel.Description, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+                <TextBlock Text="Manager" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
+                <TextBox Width="300" PlaceholderText="Managers Name" Text="{x:Bind TeamEditViewModel.Manager, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
 
                 <TextBlock Text="Country" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
-                <TextBox Width="300" PlaceholderText="Enter Teams Country" Text="{x:Bind TeamEditViewModel.Country, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
-
+                <TextBox Width="300" PlaceholderText="Teams Country" Text="{x:Bind TeamEditViewModel.Country, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
 
             </StackPanel>
         </StackPanel>
-        </StackPanel>
+
+        <TextBlock Text="Description" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
+        <ScrollViewer>
+            <TextBox MaxHeight="120" ScrollViewer.VerticalScrollBarVisibility="Visible" x:Name="AboutBox" TextWrapping="Wrap" PlaceholderText="Tell about the player" Text="{x:Bind TeamEditViewModel.Description, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+        </ScrollViewer>
+
+    </StackPanel>
 </Page>

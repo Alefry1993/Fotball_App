@@ -11,18 +11,31 @@
     <StackPanel>
         <StackPanel Orientation="Horizontal" Padding="0,15,0,0">
             <Image Source="{x:Bind PlayerEditViewModel.ProfileImageFullPath, Mode=OneWay}" />
-            <StackPanel Orientation="Vertical" Padding="15,0,0,0">
+            <StackPanel Orientation="Vertical" Padding="20,0,0,0">
                 <TextBlock Text="Name" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
                 <TextBox VerticalAlignment="Center" PlaceholderText="Enter Players Name" Text="{x:Bind PlayerEditViewModel.PlayerName, Mode=TwoWay}" Style="{ThemeResource TitleTextBlockStyle}" />
-
-                <TextBlock Text="Age" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
-                <TextBox Width="50" HorizontalAlignment="Left" PlaceholderText="Enter team description" Text="{x:Bind PlayerEditViewModel.Age, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+                <StackPanel Orientation="Horizontal" >
+                    <StackPanel Orientation="Vertical" >
+                        <TextBlock Text="Age" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
+                        <TextBox Width="50" HorizontalAlignment="Left" PlaceholderText="Players Age" Text="{x:Bind PlayerEditViewModel.Age, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Padding="20,0,0,0">
+                        <TextBlock Text="Height" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
+                        <TextBox Width="50" PlaceholderText="Players Height" Text="{x:Bind PlayerEditViewModel.Height, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+                    </StackPanel>
+                </StackPanel>
+                <TextBlock Text="Position" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
+                <TextBox Width="300" PlaceholderText="Players Position" Text="{x:Bind PlayerEditViewModel.Position, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
 
                 <TextBlock Text="Nationality" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
-                <TextBox Width="300" PlaceholderText="Enter Players Nationality" Text="{x:Bind PlayerEditViewModel.National, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
-
+                <TextBox Width="300" PlaceholderText="Players Nationality" Text="{x:Bind PlayerEditViewModel.National, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
 
             </StackPanel>
         </StackPanel>
+
+        <TextBlock Text="About" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
+        <ScrollViewer>
+            <TextBox MaxHeight="120" ScrollViewer.VerticalScrollBarVisibility="Visible" x:Name="AboutBox" TextWrapping="Wrap" PlaceholderText="Tell about the player" Text="{x:Bind PlayerEditViewModel.About, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+        </ScrollViewer>
     </StackPanel>
 </Page>

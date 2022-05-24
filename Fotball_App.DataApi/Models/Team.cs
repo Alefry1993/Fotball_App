@@ -6,6 +6,7 @@ namespace Fotball_App.DataApi.Models
     {
         public int TeamId { get; set; }
         public string TeamName { get; set; }
+        public string Manager { get; set; }
         public string TeamDescription { get; set; }
         public string TeamLogo { get; set; }
         public string Country { get; set; }

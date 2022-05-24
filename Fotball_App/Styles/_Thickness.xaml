@@ -7,6 +7,7 @@
     <Thickness x:Key="LargeTopBottomMargin">0,36,0,36</Thickness>
     <Thickness x:Key="MediumLeftMarginPlayers">400,20,0,0</Thickness>
     <Thickness x:Key="LargeLeftMargin">100,0,0,0</Thickness>
+    <Thickness x:Key="LargeRightMargin">0,0,100,0</Thickness>
     <!--Medium size margins-->
     <Thickness x:Key="MediumTopMargin">0,24,0,0</Thickness>
     <Thickness x:Key="MediumTopBottomMargin">0,24,0,24</Thickness>

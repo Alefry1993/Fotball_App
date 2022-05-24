@@ -11,12 +11,12 @@
     <Border Background="#272537">
 
 
-            <StackPanel Margin="0,0,0,0" Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Center">
-            <StackPanel Margin="0,400,0,0" Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel  Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Center">
                 <StackPanel Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Margin="{StaticResource SmallBottomMargin}" Text="Teams" HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="30"></TextBlock>
                     <Button Name="TeamButton" Click="TeamButton_Click"
-            Margin="50,0,0,400"
+            Margin="0,0,0,0"
             HorizontalAlignment="Center"
             ToolTipService.ToolTip="Create A New Team">
                         <Button.Template>
@@ -25,7 +25,7 @@
                         BorderBrush="Transparent"
                         BorderThickness="2"
                                     CornerRadius="20">
-                                    <Image Name="leagueImage" Source="https://static01.nyt.com/images/2021/04/20/sports/20soccer-reax-superleague/20soccer-reax-superleague-square640-v3.png" Height="250" />
+                                    <Image Name="leagueImage" Source="https://static01.nyt.com/images/2021/04/20/sports/20soccer-reax-superleague/20soccer-reax-superleague-square640-v3.png" Height="200" />
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
@@ -36,7 +36,7 @@
                 <StackPanel Margin="{StaticResource LargeLeftMargin}" Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Margin="{StaticResource SmallBottomMargin}" Text="Leagues" HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="30"></TextBlock>
                     <Button Name="LeagueButton" Click="LeagueButton_Click"
-            Margin="50,0,0,400"
+            
             HorizontalAlignment="Center"
             ToolTipService.ToolTip="Create A New League">
                         <Button.Template>
@@ -45,7 +45,7 @@
                         BorderBrush="Transparent"
                         BorderThickness="2"
                                     CornerRadius="20">
-                                    <Image Name="TeamImage" Source="https://cdn.wionews.com/sites/default/files/styles/story_page/public/2020/03/19/133591-untitled-design-1.jpg" Height="250" />
+                                    <Image Name="TeamImage" Source="https://cdn.wionews.com/sites/default/files/styles/story_page/public/2020/03/19/133591-untitled-design-1.jpg" Height="200" />
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
@@ -54,10 +54,10 @@
             </StackPanel>
 
 
-            <StackPanel Margin="0,-350,0,0" Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Margin="0,100,0,0" Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Margin="{StaticResource SmallBottomMargin}" Text="Players" HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="30"></TextBlock>
                 <Button Name="PlayerButton" Click="PlayerButton_Click"
-            Margin="0,0,0,400"
+            
             HorizontalAlignment="Center"
             ToolTipService.ToolTip="Create A New League">
                     <Button.Template>
@@ -66,7 +66,7 @@
                         BorderBrush="Transparent"
                         BorderThickness="2"
                                     CornerRadius="20">
-                                <Image Name="TeamImage" Source="https://www.clipartmax.com/png/middle/264-2640056_football-players-on-game-comments-playing-football-icon-png.png" Height="250" />
+                                <Image Name="TeamImage" Source="https://www.clipartmax.com/png/middle/264-2640056_football-players-on-game-comments-playing-football-icon-png.png" Height="200" />
                             </Border>
                         </ControlTemplate>
                     </Button.Template>

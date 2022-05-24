@@ -1,13 +1,12 @@
-﻿using Fotball_App.Activation;
+﻿using CommunityToolkit.Mvvm.DependencyInjection;
+using Fotball_App.Activation;
 using Fotball_App.Contracts.Services;
-using Fotball_App.Core.Constants;
 using Fotball_App.Core.Contracts.Services;
 using Fotball_App.Core.Services;
 using Fotball_App.Helpers;
 using Fotball_App.Services;
 using Fotball_App.ViewModels;
 using Fotball_App.Views;
-using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
 
@@ -30,9 +29,9 @@ namespace Fotball_App
 
 
         }
-    
 
-    private void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+
+        private void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             // TODO WTS: Please log and handle the exception as appropriate to your scenario
             // For more info see https://docs.microsoft.com/windows/winui/api/microsoft.ui.xaml.unhandledexceptioneventargs

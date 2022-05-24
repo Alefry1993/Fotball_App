@@ -17,6 +17,9 @@ namespace Fotball_App.Views
         {
             PlayerEditViewModel = viewModel;
             this.InitializeComponent();
+            ScrollViewer.SetVerticalScrollBarVisibility(AboutBox, ScrollBarVisibility.Visible);
         }
+
+
     }
 }

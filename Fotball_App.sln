@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fotball_App", "Fotball_App\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fotball_App.Core", "Fotball_App.Core\Fotball_App.Core.csproj", "{EAE4247F-D314-49A6-BE16-2507CF684C6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fotball_App.DataApi", "Fotball_App.DataApi\Fotball_App.DataApi.csproj", "{A71EBFF7-9E67-4451-89E6-654D673C53D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fotball_App.DataApi", "Fotball_App.DataApi\Fotball_App.DataApi.csproj", "{A71EBFF7-9E67-4451-89E6-654D673C53D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fotball_App.ImageApi", "Fotball_App.ImageApi\Fotball_App.ImageApi.csproj", "{309FE11D-A796-4C26-A7A1-C6D756DFA758}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fotball_App.ImageApi", "Fotball_App.ImageApi\Fotball_App.ImageApi.csproj", "{309FE11D-A796-4C26-A7A1-C6D756DFA758}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

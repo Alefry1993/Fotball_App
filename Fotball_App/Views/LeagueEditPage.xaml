@@ -14,12 +14,23 @@
             <StackPanel Orientation="Vertical" Padding="15,0,0,0">
 
                 <TextBlock Text="Name" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
-                <TextBox VerticalAlignment="Center" PlaceholderText="Enter Leagues Name" Text="{x:Bind LeagueEditViewModel.LeagueName, Mode=TwoWay}" Style="{ThemeResource TitleTextBlockStyle}" />
+                <TextBox VerticalAlignment="Center" PlaceholderText="Leagues Name" Text="{x:Bind LeagueEditViewModel.LeagueName, Mode=TwoWay}" Style="{ThemeResource TitleTextBlockStyle}" />
+
+                <TextBlock Text="Founded" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
+                <TextBox Width="300" PlaceholderText="When was the league founded" Text="{x:Bind LeagueEditViewModel.Founded, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
 
                 <TextBlock Text="Country" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
-                <TextBox Width="300" PlaceholderText="Enter Leagues Country" Text="{x:Bind LeagueEditViewModel.Nationality, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+                <TextBox Width="300" PlaceholderText="Leagues Country" Text="{x:Bind LeagueEditViewModel.Nationality, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+
 
             </StackPanel>
         </StackPanel>
+        <StackPanel Margin="{StaticResource MediumTopMargin}" Orientation="Vertical" >
+                <TextBlock Text="About" Style="{StaticResource DetailSubTitleStyle}" />
+                <ScrollViewer>
+                <TextBox Margin="{StaticResource SmallTopMargin}" MaxHeight="250" ScrollViewer.VerticalScrollBarVisibility="Visible"  TextWrapping="Wrap" PlaceholderText="Tell about the league" Text="{x:Bind LeagueEditViewModel.About, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+                </ScrollViewer>
+            </StackPanel>
+  
     </StackPanel>
 </Page>

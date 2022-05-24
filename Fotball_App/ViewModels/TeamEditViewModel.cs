@@ -27,6 +27,7 @@ namespace Fotball_App.ViewModels
         {
             TeamId = t.TeamID,
             TeamName = t.TeamName,
+            Manager = t.Manager,
             TeamDescription = t.Description,
             TeamLogo = t.ProfileImage,
             League = t.league,
@@ -54,8 +55,12 @@ namespace Fotball_App.ViewModels
         {
             get => _teamDto.TeamName;
             set => SetProperty(_teamDto.TeamName, value, (name) => _teamDto.TeamName = name);
+        }
 
-
+        public string Manager
+        {
+            get => _teamDto.Manager;
+            set => SetProperty(_teamDto.Manager, value, (manager) => _teamDto.Manager = manager);
         }
 
         public string ProfileImage
@@ -63,7 +68,6 @@ namespace Fotball_App.ViewModels
             get => _teamDto.TeamLogo;
             set => SetProperty(_teamDto.TeamLogo, value, (profileImage) => _teamDto.TeamLogo = profileImage);
         }
-
 
         public string Description
         {

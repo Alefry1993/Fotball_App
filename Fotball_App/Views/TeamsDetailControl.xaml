@@ -33,6 +33,13 @@
                     FontFamily="Times New Roman"
                     Text="{x:Bind ListDetailsMenuItem.Country, Mode=OneWay}"
                     Style="{StaticResource TitleBodyStyles}" />
+
+                    <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    VerticalAlignment="Center"
+                    FontFamily="Times New Roman"
+                    Text="{x:Bind ListDetailsMenuItem.Manager, Mode=OneWay}"
+                    Style="{StaticResource TitleBodyStyles}" />
                 </StackPanel>
             </StackPanel>
 

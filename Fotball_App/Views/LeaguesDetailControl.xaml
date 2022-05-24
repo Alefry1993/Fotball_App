@@ -24,12 +24,25 @@
                     Style="{StaticResource TitleBodyStyles}" />
 
                     <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
                     Text="{x:Bind ListDetailsMenuItem.Nationality, Mode=OneWay}"
                     Style="{StaticResource TitleBodyStyles}" />
-                    
+
+                    <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Text="{x:Bind ListDetailsMenuItem.Founded, Mode=OneWay}"
+                    Style="{StaticResource TitleBodyStyles}" />
+
                 </StackPanel>
             </StackPanel>
             <StackPanel Name="block" Padding="0,15,0,0">
+
+                <TextBlock
+                    Margin="{StaticResource MediumTopMargin}"
+                    Text="About"
+                    Style="{StaticResource DetailSubTitleStyle}" />
+                <TextBlock Text="{x:Bind ListDetailsMenuItem.About, Mode=OneWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+
                 <TextBlock
                     Margin="{StaticResource MediumTopMargin}"
                     Text="Teams in league:"

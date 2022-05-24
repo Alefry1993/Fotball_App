@@ -28,6 +28,8 @@ namespace Fotball_App.ViewModels
             LeagueId = l.LeagueID,
             LeagueName = l.LeagueName,
             Nationality = l.Nationality,
+            About = l.About,
+            Founded = l.Founded,
             LeagueLogo = l.ProfileImage,
             Teams = l.Teams
         };
@@ -52,7 +54,7 @@ namespace Fotball_App.ViewModels
         {
             get => _LeagueDto.LeagueName;
             set => SetProperty(_LeagueDto.LeagueName, value, (name) => _LeagueDto.LeagueName = name);
-            
+
         }
 
         public string Nationality
@@ -60,13 +62,25 @@ namespace Fotball_App.ViewModels
             get => _LeagueDto.Nationality;
             set => SetProperty(_LeagueDto.Nationality, value, (country) => _LeagueDto.Nationality = country);
 
-            
+
         }
 
         public string ProfileImage
         {
             get => _LeagueDto.LeagueLogo;
             set => SetProperty(_LeagueDto.LeagueLogo, value, (profileImage) => _LeagueDto.LeagueLogo = profileImage);
+        }
+
+        public string About
+        {
+            get => _LeagueDto.About;
+            set => SetProperty(_LeagueDto.About, value, (about) => _LeagueDto.About = about);
+        }
+
+        public string Founded
+        {
+            get => _LeagueDto.Founded;
+            set => SetProperty(_LeagueDto.Founded, value, (founded) => _LeagueDto.Founded = founded);
         }
 
         public List<TeamDto> Teams

@@ -15,5 +15,20 @@ namespace Fotball_App.Views
             ViewModel = Ioc.Default.GetService<HomeViewModel>();
             InitializeComponent();
         }
+
+        private void LeagueButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(LeaguesPage));
+        }
+
+        private void TeamButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TeamsPage));
+        }
+
+        private void PlayerButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(PlayersPage));
+        }
     }
 }

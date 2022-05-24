@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Fotball_App.Core.Constants
+﻿namespace Fotball_App.Core.Constants
 {
-    class WindowMessage
+    public class WindowMessage
     {
+        public const uint WM_SETICON = 128;
     }
 }

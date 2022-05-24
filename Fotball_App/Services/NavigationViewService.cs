@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Fotball_App.Contracts.Services;
+﻿using Fotball_App.Contracts.Services;
 using Fotball_App.Helpers;
 using Fotball_App.ViewModels;
-
 using Microsoft.UI.Xaml.Controls;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Fotball_App.Services
 {

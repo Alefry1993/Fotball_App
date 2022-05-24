@@ -8,15 +8,18 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-
     <StackPanel>
-        <TextBox VerticalAlignment="Center" FontFamily="Times New Roman" PlaceholderText="Enter League Name" Text="{x:Bind LeagueEditViewModel.LeagueName, Mode=TwoWay}" Style="{ThemeResource TitleTextBlockStyle}" />
         <StackPanel Orientation="Horizontal" Padding="0,15,0,0">
-            <StackPanel Padding="15,0,0,0">
-                <TextBlock Text="Country" FontFamily="Times New Roman" Style="{StaticResource DetailSubTitleStyle}" />
-                <TextBox Width="300" PlaceholderText="Enter Leagues Country" Text="{x:Bind LeagueEditViewModel.Country, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+            <Image Source="{x:Bind LeagueEditViewModel.ProfileImageFullPath, Mode=OneWay}" />
+            <StackPanel Orientation="Vertical" Padding="15,0,0,0">
+
+                <TextBlock Text="Name" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
+                <TextBox VerticalAlignment="Center" PlaceholderText="Enter Leagues Name" Text="{x:Bind LeagueEditViewModel.LeagueName, Mode=TwoWay}" Style="{ThemeResource TitleTextBlockStyle}" />
+
+                <TextBlock Text="Country" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
+                <TextBox Width="300" PlaceholderText="Enter Leagues Country" Text="{x:Bind LeagueEditViewModel.Nationality, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+
             </StackPanel>
         </StackPanel>
-        <TextBlock Margin="{StaticResource MediumTopMargin}" Foreground="Red" VerticalAlignment="Center" Text="{x:Bind LeagueEditViewModel.Errors, Mode=OneWay}" Style="{ThemeResource DetailBodyStyle}" />
     </StackPanel>
 </Page>

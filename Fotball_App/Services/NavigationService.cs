@@ -1,8 +1,6 @@
 ﻿using Fotball_App.Contracts.Services;
 using Fotball_App.Contracts.ViewModels;
 using Fotball_App.Helpers;
-
-using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 

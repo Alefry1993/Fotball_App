@@ -1,14 +1,9 @@
-﻿using System;
-using System.Windows.Input;
-
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-
 using Fotball_App.Contracts.Services;
 using Fotball_App.Helpers;
-
 using Microsoft.UI.Xaml;
-
+using System.Windows.Input;
 using Windows.ApplicationModel;
 
 namespace Fotball_App.ViewModels

@@ -20,7 +20,7 @@ namespace Fotball_App.Core.Services
         public async Task<IEnumerable<LeagueDto>> GetLeaguesAsync()
         {
             var leagueItems = new List<LeagueDto>();
-            HttpResponseMessage httpResponseMessage = await _httpClient.GetAsync("League?includeteams=true");
+            HttpResponseMessage httpResponseMessage = await _httpClient.GetAsync("Leagues?includeTeams=true");
             if (httpResponseMessage.IsSuccessStatusCode)
             {
                 string content = await httpResponseMessage.Content.ReadAsStringAsync();
@@ -45,8 +45,14 @@ namespace Fotball_App.Core.Services
 
         public async Task<LeagueDto> UpdateLeagueAsync(LeagueDto league)
         {
-            HttpResponseMessage httpResponseMessage = await _httpClient.PutAsJsonAsync($"Leagues", league);
-            return await httpResponseMessage.Content.ReadFromJsonAsync<LeagueDto>();
+            var updatedLeague = new LeagueDto();
+            HttpResponseMessage httpResponseMessage = await _httpClient.PutAsJsonAsync($"Leagues/{league.LeagueId}", league);
+            if (httpResponseMessage.IsSuccessStatusCode)
+            {
+                string content = await httpResponseMessage.Content.ReadAsStringAsync();
+                updatedLeague = await Json.ToObjectAsync<LeagueDto>(content);
+            }
+            return updatedLeague;
         }
     }
 }

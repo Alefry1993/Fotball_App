@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Fotball_App.Core.Constants
+﻿namespace Fotball_App.Core.Constants
 {
-    class UrlAdresses
+    public static class UrlAdresses
     {
+        public const string DataApi = "https://localhost:44317/api/";
+        public const string ImageApi = "https://localhost:44344/api/Images";
     }
 }

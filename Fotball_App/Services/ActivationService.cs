@@ -1,15 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using CommunityToolkit.Mvvm.DependencyInjection;
-
+﻿using CommunityToolkit.Mvvm.DependencyInjection;
 using Fotball_App.Activation;
 using Fotball_App.Contracts.Services;
 using Fotball_App.Views;
-
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Fotball_App.Services
 {

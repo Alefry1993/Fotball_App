@@ -4,38 +4,54 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:helpers="using:Fotball_App.Helpers"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <helpers:IListStringJoinConverter x:Key="IListStringJoinConverter"/>
+    </UserControl.Resources>
     <ScrollViewer
         Name="ForegroundElement"
         HorizontalAlignment="Stretch"
         VerticalScrollMode="Enabled"
         Padding="{StaticResource DetailPageMargin}"
-        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+        Background="#272537"
         IsTabStop="True">
         <StackPanel HorizontalAlignment="Left">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <Image Source="{x:Bind ListDetailsMenuItem.ProfileImageFullPath, Mode=OneWay}"/>
-                <TextBlock
-                    Margin="{StaticResource SmallLeftMargin}"
+                <Image Height="200" Width="180" Source="{x:Bind ListDetailsMenuItem.ProfileImageFullPath, Mode=OneWay}"/>
+                <StackPanel  Margin="{StaticResource LargeLeftMargin}" Orientation="Vertical" HorizontalAlignment="Stretch">
+                    <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
                     VerticalAlignment="Center"
+                    FontFamily="Times New Roman"
                     Text="{x:Bind ListDetailsMenuItem.TeamName, Mode=OneWay}"
-                    Style="{ThemeResource TitleTextBlockStyle}" />
+                    Style="{StaticResource TitleBodyStyles}" />
+
+                    <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    VerticalAlignment="Center"
+                    FontFamily="Times New Roman"
+                    Text="{x:Bind ListDetailsMenuItem.Country, Mode=OneWay}"
+                    Style="{StaticResource TitleBodyStyles}" />
+                </StackPanel>
             </StackPanel>
-            <StackPanel Name="block" Padding="0,15,0,0">
-                <TextBlock Text="Status" Style="{StaticResource DetailSubTitleStyle}" />
 
-                <TextBlock Text="{x:Bind ListDetailsMenuItem.Description, Mode=OneWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+            <StackPanel Name="block" Margin="0,10,0,0" Padding="0,15,0,0">
+                <TextBlock  Text="Description" Style="{StaticResource DetailSubTitleStyle}" />
+                <TextBlock Margin="{StaticResource XSmallTopMargin}" Text="{x:Bind ListDetailsMenuItem.Description, Mode=OneWay}" Style="{StaticResource DetailBodyBaseMediumStyle}"></TextBlock>
 
-                <TextBlock
+                <StackPanel Margin="{StaticResource XSmallTopMargin}" Orientation="Horizontal">
+                    <TextBlock
                     Margin="{StaticResource SmallTopMargin}"
-                    Text="Order date"
+                    Text="League"
+                    Style="{StaticResource DetailSubTitleStyle}"  />
+                    <TextBlock Text="{x:Bind ListDetailsMenuItem.league, Converter={StaticResource IListStringJoinConverter} , Mode=OneWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+                    <TextBlock
+                    Margin="{StaticResource MediumLeftMarginPlayers}"
+                    Text="Players"
                     Style="{StaticResource DetailSubTitleStyle}" />
-                <TextBlock Text="{x:Bind ListDetailsMenuItem.league, Mode=OneWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
-                <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
-                    Text="Company"
-                    Style="{StaticResource DetailSubTitleStyle}" />
-                <TextBlock Text="{x:Bind ListDetailsMenuItem.Players, Mode=OneWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+                    <TextBlock Text="{x:Bind ListDetailsMenuItem.Players, Converter={StaticResource IListStringJoinConverter}, Mode=OneWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+                </StackPanel>
             </StackPanel>
         </StackPanel>
     </ScrollViewer>

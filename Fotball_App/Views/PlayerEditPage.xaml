@@ -8,18 +8,21 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-
     <StackPanel>
-        <TextBox VerticalAlignment="Center" PlaceholderText="Enter Players name" Text="{x:Bind PlayerEditViewModel.PlayerName, Mode=TwoWay}" Style="{ThemeResource TitleTextBlockStyle}" />
         <StackPanel Orientation="Horizontal" Padding="0,15,0,0">
-            <StackPanel Padding="15,0,0,0">
-                <TextBlock Text="Age" Style="{StaticResource DetailSubTitleStyle}" />
-                <TextBox Width="300" PlaceholderText="Enter the players age" Text="{x:Bind PlayerEditViewModel.Age, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+            <Image Source="{x:Bind PlayerEditViewModel.ProfileImageFullPath, Mode=OneWay}" />
+            <StackPanel Orientation="Vertical" Padding="15,0,0,0">
+                <TextBlock Text="Name" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
+                <TextBox VerticalAlignment="Center" PlaceholderText="Enter Players Name" Text="{x:Bind PlayerEditViewModel.PlayerName, Mode=TwoWay}" Style="{ThemeResource TitleTextBlockStyle}" />
 
-                <TextBlock Margin="{StaticResource SmallTopMargin}" Text="Nationality" Style="{StaticResource DetailSubTitleStyle}" />
-                <TextBox PlaceholderText="Enter players nationality" Text="{x:Bind PlayerEditViewModel.National, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+                <TextBlock Text="Age" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
+                <TextBox Width="50" HorizontalAlignment="Left" PlaceholderText="Enter team description" Text="{x:Bind PlayerEditViewModel.Age, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+
+                <TextBlock Text="Nationality" Margin="{StaticResource SmallTopBottomMargin}" Style="{StaticResource DetailSubTitleStyle}" />
+                <TextBox Width="300" PlaceholderText="Enter Players Nationality" Text="{x:Bind PlayerEditViewModel.National, Mode=TwoWay}" Style="{StaticResource DetailBodyBaseMediumStyle}" />
+
+
             </StackPanel>
         </StackPanel>
-        <TextBlock Margin="{StaticResource MediumTopMargin}" Foreground="Red" VerticalAlignment="Center" Text="{x:Bind PlayerEditViewModel.Errors, Mode=OneWay}" Style="{ThemeResource DetailBodyStyle}" />
     </StackPanel>
 </Page>

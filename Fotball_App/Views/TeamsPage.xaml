@@ -8,12 +8,14 @@
     xmlns:models="using:Fotball_App.Core.Models"
     xmlns:views="using:Fotball_App.Views"
     mc:Ignorable="d"
+    xmlns:viewmodels="using:Fotball_App.ViewModels"
     xmlns:behaviors="using:Fotball_App.Behaviors"
     behaviors:NavigationViewHeaderBehavior.HeaderMode="Never"
+    Background="#272537"
     Style="{StaticResource PageStyle}">
     <Page.Resources>
         <DataTemplate x:Key="ItemTemplate" x:DataType="viewmodels:TeamEditViewModel">
-            <Grid Height="60">
+            <Grid Height="75">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
@@ -91,14 +93,13 @@
             SelectedItem="{x:Bind ViewModel.Selected, Mode=TwoWay}"
             ViewStateChanged="OnViewStateChanged"
             ListHeaderTemplate="{StaticResource MinimalListHeaderTemplate}"
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}" >
+            Background="#111019">
 
             <controls:ListDetailsView.ListCommandBar>
-                <CommandBar>
+                <CommandBar Background="#111019">
                     <AppBarButton Icon="Add" Label="Add" Command="{x:Bind ViewModel.AddCommand}"/>
                     <AppBarButton Icon="Edit" Label="Edit" Command="{x:Bind ViewModel.UpdateCommand}" CommandParameter="{x:Bind ViewModel.Selected, Mode=OneWay}"/>
                     <AppBarButton Icon="Delete" Label="Delete" Command="{x:Bind ViewModel.DeleteCommand}" CommandParameter="{x:Bind ViewModel.Selected, Mode=OneWay}" />
-                    <AppBarButton Icon="Setting" Label="Settings" Command="{x:Bind ViewModel.SettingsCommand}" />
                 </CommandBar>
             </controls:ListDetailsView.ListCommandBar>
         </controls:ListDetailsView>

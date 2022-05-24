@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Fotball_App.Core.Contracts.Services;
+using Fotball_App.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
-using Fotball_App.Core.Contracts.Services;
-using Fotball_App.Core.Models;
 
 namespace Fotball_App.Core.Services
 {

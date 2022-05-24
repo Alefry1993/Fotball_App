@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Fotball_App.DataApi.Models
 {
@@ -11,7 +8,8 @@ namespace Fotball_App.DataApi.Models
         public string TeamName { get; set; }
         public string TeamDescription { get; set; }
         public string TeamLogo { get; set; }
-        public League League { get; set; }
+        public string Country { get; set; }
+        public List<League> League { get; set; }
         public List<Player> players { get; set; }
     }
 }

@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Fotball_App.ImageApi.Controllers
@@ -126,7 +124,7 @@ namespace Fotball_App.ImageApi.Controllers
         /// <returns></returns>
         private string GetImagePath()
         {
-            var path = $"{environment.ContentRootPath}\\images";
+            var path = $"{environment.ContentRootPath}\\Images";
 
             if (!System.IO.Directory.Exists(path))
             {

@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Fotball_App.Core.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-
-using Fotball_App.Core.Models;
 
 namespace Fotball_App.Core.Contracts.Services
 {

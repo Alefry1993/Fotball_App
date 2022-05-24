@@ -7,6 +7,7 @@
     xmlns:helpers="using:Fotball_App.Helpers"
     xmlns:behaviors="using:Fotball_App.Behaviors"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
+    Background="#272537"
     Loaded="OnLoaded"
     Style="{StaticResource PageStyle}">
 
@@ -17,8 +18,7 @@
         SelectedItem="{x:Bind ViewModel.Selected, Mode=OneWay}"
         IsSettingsVisible="True"
         ExpandedModeThresholdWidth="1280"
-        Header="{x:Bind ((ContentControl)ViewModel.Selected).Content, Mode=OneWay}"
-        Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
+        Header="{x:Bind ((ContentControl)ViewModel.Selected).Content, Mode=OneWay}">
         <NavigationView.MenuItems>
             <!--
             TODO WTS: Change the symbols for each item as appropriate for your app
@@ -26,10 +26,11 @@
             Or to use an IconElement instead of a Symbol see https://github.com/Microsoft/WindowsTemplateStudio/blob/release/docs/UWP/projectTypes/navigationpane.md
             Edit String/en-US/Resources.resw: Add a menu item title for each page
             -->
-            <NavigationViewItem x:Uid="Shell_Home" Icon="Document" helpers:NavHelper.NavigateTo="Fotball_App.ViewModels.HomeViewModel" />
-            <NavigationViewItem x:Uid="Shell_Leagues" Icon="Document" helpers:NavHelper.NavigateTo="Fotball_App.ViewModels.LeaguesViewModel" />
-            <NavigationViewItem x:Uid="Shell_Teams" Icon="Document" helpers:NavHelper.NavigateTo="Fotball_App.ViewModels.TeamsViewModel" />
-            <NavigationViewItem x:Uid="Shell_Players" Icon="Document" helpers:NavHelper.NavigateTo="Fotball_App.ViewModels.PlayersViewModel" />
+            <NavigationViewItem x:Uid="Shell_Home" Icon="Home"  helpers:NavHelper.NavigateTo="Fotball_App.ViewModels.HomeViewModel" />
+            <NavigationViewItem x:Uid="Shell_Leagues" Icon="SolidStar" helpers:NavHelper.NavigateTo="Fotball_App.ViewModels.LeaguesViewModel" />
+            <NavigationViewItem x:Uid="Shell_Teams" Icon="OutlineStar" helpers:NavHelper.NavigateTo="Fotball_App.ViewModels.TeamsViewModel" />
+            <NavigationViewItem x:Uid="Shell_Players" Icon="OtherUser" helpers:NavHelper.NavigateTo="Fotball_App.ViewModels.PlayersViewModel" />
+
         </NavigationView.MenuItems>
         <NavigationView.HeaderTemplate>
             <DataTemplate>

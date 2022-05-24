@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Fotball_App.Core.Dtos
 {
@@ -10,7 +8,8 @@ namespace Fotball_App.Core.Dtos
         public string TeamName { get; set; }
         public string TeamDescription { get; set; }
         public string TeamLogo { get; set; }
-        public LeagueDto League { get; set; }
+        public List<LeagueDto> League { get; set; }
         public List<PlayerDto> players { get; set; }
+        public string Country { get; set; }
     }
 }

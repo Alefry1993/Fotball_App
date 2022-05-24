@@ -1,5 +1,4 @@
-﻿using Fotball_App.Core.Models;
-
+﻿using Fotball_App.ViewModels;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
@@ -7,13 +6,13 @@ namespace Fotball_App.Views
 {
     public sealed partial class PlayersDetailControl : UserControl
     {
-        public SampleOrder ListDetailsMenuItem
+        public PlayerEditViewModel ListDetailsMenuItem
         {
-            get { return GetValue(ListDetailsMenuItemProperty) as SampleOrder; }
+            get { return GetValue(ListDetailsMenuItemProperty) as PlayerEditViewModel; }
             set { SetValue(ListDetailsMenuItemProperty, value); }
         }
 
-        public static readonly DependencyProperty ListDetailsMenuItemProperty = DependencyProperty.Register("ListDetailsMenuItem", typeof(SampleOrder), typeof(PlayersDetailControl), new PropertyMetadata(null, OnListDetailsMenuItemPropertyChanged));
+        public static readonly DependencyProperty ListDetailsMenuItemProperty = DependencyProperty.Register("ListDetailsMenuItem", typeof(PlayerEditViewModel), typeof(PlayersDetailControl), new PropertyMetadata(null, OnListDetailsMenuItemPropertyChanged));
 
         public PlayersDetailControl()
         {

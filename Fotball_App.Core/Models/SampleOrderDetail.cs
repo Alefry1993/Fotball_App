@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Fotball_App.Core.Models
+﻿namespace Fotball_App.Core.Models
 {
     // Remove this class once your pages/features are using your data.
     // This is used by the SampleDataService.

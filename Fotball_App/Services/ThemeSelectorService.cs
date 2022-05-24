@@ -1,11 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-
-using Fotball_App.Contracts.Services;
+﻿using Fotball_App.Contracts.Services;
 using Fotball_App.Helpers;
-
 using Microsoft.UI.Xaml;
-
+using System;
+using System.Threading.Tasks;
 using Windows.Storage;
 
 namespace Fotball_App.Services

@@ -7,6 +7,7 @@
     xmlns:helpers="using:Fotball_App.Helpers"
     xmlns:xaml="using:Microsoft.UI.Xaml"
     mc:Ignorable="d"
+    Background="#272537"
     Style="{StaticResource PageStyle}">
     <Page.Resources>
         <helpers:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
@@ -20,16 +21,6 @@
 
                 <StackPanel Margin="{StaticResource XSmallTopMargin}">
                     <RadioButton
-                        x:Uid="Settings_Theme_Light"
-                        Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                        IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}"
-                        FontSize="15"
-                        GroupName="AppTheme">
-                        <RadioButton.CommandParameter>
-                            <xaml:ElementTheme>Light</xaml:ElementTheme>
-                        </RadioButton.CommandParameter>
-                    </RadioButton>
-                    <RadioButton
                         x:Uid="Settings_Theme_Dark"
                         Command="{x:Bind ViewModel.SwitchThemeCommand}"
                         IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}"
@@ -41,6 +32,13 @@
                     </RadioButton>
                 </StackPanel>
             </StackPanel>
+
+            <TextBlock
+                    Margin="{StaticResource MediumTopMargin}"
+                    Text="GitHub Repository:"
+                    Style="{StaticResource DetailSubTitleStyle}" />
+            <HyperlinkButton  Content="My GitHub Repository for this App" NavigateUri="https://github.com/Alefry1993/Fotball_Appp"></HyperlinkButton>
+
         </StackPanel>
     </Grid>
 </Page>

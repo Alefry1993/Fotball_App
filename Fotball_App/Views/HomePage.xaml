@@ -54,7 +54,7 @@
             </StackPanel>
 
 
-            <StackPanel Margin="0,100,0,0" Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Margin="0,50,0,0" Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Margin="{StaticResource SmallBottomMargin}" Text="Players" HorizontalAlignment="Center" FontFamily="Times New Roman" FontSize="30"></TextBlock>
                 <Button Name="PlayerButton" Click="PlayerButton_Click"
             
